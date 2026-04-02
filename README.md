@@ -34,6 +34,8 @@ According to the abstract and Table 1 in the paper, SPIRE achieves a strong accu
 | L2SKNet | TGRS'25 | 95.83 | 89.04 | 92.31 | 11.70 | 92.89 | 91.42 | 92.16 | 40.20 | 43.09 | 0.90 |
 | **SPIRE (Ours)** | - | **99.82** | 94.44 | 97.05 | **1.02** | **95.00** | **94.21** | **94.60** | **28.53** | 7.68 | 0.29 |
 
+Pretrained weights for the reported SPIRE models are provided in the `weights/` folder, including the checkpoints for `SIRST-UAVB` and `SIRST4`.
+
 Key takeaways:
 - On `SIRST4`, SPIRE achieves the best `Precision`, `Recall`, `F1`, and `Fa` among the compared methods in Table 1.
 - On `SIRST-UAVB`, SPIRE achieves the best `Precision` and the lowest `False Alarm`.
