@@ -21,9 +21,18 @@ According to the abstract and Table 1 in the paper, SPIRE achieves a strong accu
 
 <img width="1000" src="assets/expIMG.png" />
 
-| Method | SIRST-UAVB Pre / Rec / F1 / Fa | SIRST4 Pre / Rec / F1 / Fa | FLOPs(G) | Params(M) |
-| --- | --- | --- | --- | --- |
-| SPIRE (Ours) | 99.82 / 94.44 / 97.05 / 1.02 | 95.00 / 94.21 / 94.60 / 28.53 | 7.68 | 0.29 |
+| Method | Venue | UAVB Pre | UAVB Rec | UAVB F1 | UAVB Fa | SIRST4 Pre | SIRST4 Rec | SIRST4 F1 | SIRST4 Fa | FLOPs(G) | Params(M) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ACM | WACV'21 | 87.01 | 71.16 | 78.29 | 34.04 | 90.17 | 70.38 | 79.05 | 44.08 | 2.51 | 0.40 |
+| ALCNet | TGRS'21 | 95.06 | 81.11 | 87.53 | 12.72 | 91.45 | 72.41 | 80.82 | 38.90 | 2.36 | 0.43 |
+| ISTDU-Net | GRSL'22 | 79.28 | 78.08 | 78.67 | 61.54 | 93.28 | 72.03 | 81.29 | 29.83 | 49.65 | 2.75 |
+| RDIAN | TGRS'23 | 52.68 | 77.91 | 62.86 | 211.08 | 90.64 | 80.83 | 85.45 | 47.98 | 23.24 | 0.22 |
+| DNANet | TIP'23 | 94.48 | 89.54 | 91.95 | 15.77 | 93.99 | 81.20 | 87.13 | 29.82 | 89.13 | 4.70 |
+| SCTransNet | TGRS'24 | 98.27 | 95.95 | 97.09 | 5.09 | 81.20 | 86.39 | 83.72 | 114.98 | 63.22 | 11.19 |
+| MSHNet | CVPR'24 | 71.90 | 88.02 | 79.09 | 104.27 | 90.68 | 92.86 | 91.47 | 60.51 | 38.16 | 4.07 |
+| SDSNet | TGRS'25 | 97.60 | 96.29 | 96.94 | 7.12 | 87.35 | 88.27 | 87.81 | 73.48 | 42.42 | 2.49 |
+| L$^2$SKNet | TGRS'25 | 95.83 | 89.04 | 92.31 | 11.70 | 92.89 | 91.42 | 92.16 | 40.20 | 43.09 | 0.90 |
+| **SPIRE (Ours)** | - | **99.82** | 94.44 | 97.05 | **1.02** | **95.00** | **94.21** | **94.60** | **28.53** | 7.68 | 0.29 |
 
 Key takeaways:
 - On `SIRST4`, SPIRE achieves the best `Precision`, `Recall`, `F1`, and `Fa` among the compared methods in Table 1.
@@ -66,6 +75,18 @@ pip install torch torchvision tensorboard numpy opencv-python pillow matplotlib 
 ```
 
 ## Dataset Preparation
+SPIRE is evaluated on two datasets:
+
+- `SIRST-UAVB`: a UAV-focused infrared small target dataset used in this repository in the `SIRST-UAVB_OnlyUAV_Form` release.
+- `SIRST4`: a merged benchmark composed of `SIRSTv1`, `SIRSTv2`, `NUDT-SIRST`, and `IRSTD-1k`.
+
+Download links:
+
+- `SIRST-UAVB`:
+  [Baidu Netdisk](https://pan.baidu.com/s/1Iv7sIxTrrIzc2COOqjwZeA?pwd=1111) (`SIRST-UAVB_OnlyUAV_Form.zip`, extraction code: `1111`)
+- `SIRST4`:
+  [Baidu Netdisk](https://pan.baidu.com/s/1m7TZH31CWnBp1pCqSg0k3g?pwd=1111) (`SIRST4-ForLiTE.zip`, extraction code: `1111`)
+
 The code currently supports two dataset layouts. The recommended unified layout is:
 
 ```text
@@ -300,8 +321,8 @@ Evaluation phase:
 - Output directories use a Linux/Windows-safe timestamp format: `YYYYMMDD_HHMMSS`.
 
 ## Acknowledgement
-This code is heavily based on [WZMIAOMIAO's deep-learning-for-image-processing](https://github.com/WZMIAOMIAO/deep-learning-for-image-processing). Thanks for the great work.  
-This code is heavily based on [Basic-IRSTD](https://github.com/XinyiYing/BasicIRSTD). Thanks Xinyi Ying.
+This repository builds substantially on [WZMIAOMIAO's deep-learning-for-image-processing](https://github.com/WZMIAOMIAO/deep-learning-for-image-processing). We sincerely thank the authors for their excellent work.
+It also benefits from [Basic-IRSTD](https://github.com/XinyiYing/BasicIRSTD). We thank Xinyi Ying for making this valuable codebase publicly available.
 
 ## Citation
 If you find this repository useful, please cite the SPIRE paper once the final bibliographic information is released. 
