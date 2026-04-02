@@ -13,13 +13,13 @@ Compared with conventional segmentation-based pipelines, SPIRE offers:
 - direct target-level localization with a simple inference pipeline
 - competitive accuracy with low false alarm rate and low computational cost
 
-<img width="800" src="assets/framework.png" />
+<img width="600" src="assets/framework.png" />
 
 ## Paper Summary
 
 According to the abstract and Table 1 in the paper, SPIRE achieves a strong accuracy-efficiency trade-off on both `SIRST-UAVB` and `SIRST4`, with particularly strong performance on `SIRST4`.
 
-<img width="800" src="assets/exp.png" />
+<img width="600" src="assets/expIMG.png" />
 
 | Method | SIRST-UAVB Pre / Rec / F1 / Fa | SIRST4 Pre / Rec / F1 / Fa | FLOPs(G) | Params(M) |
 | --- | --- | --- | --- | --- |
