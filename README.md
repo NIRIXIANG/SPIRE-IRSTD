@@ -295,4 +295,4 @@ Evaluation phase:
 - Output directories use a Linux/Windows-safe timestamp format: `YYYYMMDD_HHMMSS`.
 
 ## Citation
-If you find this repository useful, please cite the SPIRE paper once the final bibliographic information is released.
+If you find this repository useful, please cite the SPIRE paper once the final bibliographic information is released. @https://github.com/WZMIAOMIAO/deep-learning-for-image-processing
