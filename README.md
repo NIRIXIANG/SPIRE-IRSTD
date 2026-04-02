@@ -294,8 +294,11 @@ Evaluation phase:
 - Default thresholds in `train.py`, `train_ddp.py`, and `evaluate.py` are aligned.
 - Output directories use a Linux/Windows-safe timestamp format: `YYYYMMDD_HHMMSS`.
 
+## Acknowledgement
+This code is heavily based on [WZMIAOMIAO's deep-learning-for-image-processing](https://github.com/WZMIAOMIAO/deep-learning-for-image-processing). Thanks for the great work.
+
 ## Citation
-If you find this repository useful, please cite the SPIRE paper once the final bibliographic information is released. @https://github.com/WZMIAOMIAO/deep-learning-for-image-processing
+If you find this repository useful, please cite the SPIRE paper once the final bibliographic information is released. 
 
 ## Contact
 Welcome to raise issues or email to nirixiang@nudt.edu.cn for any question.
