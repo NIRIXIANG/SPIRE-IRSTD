@@ -13,13 +13,13 @@ Compared with conventional segmentation-based pipelines, SPIRE offers:
 - direct target-level localization with a simple inference pipeline
 - competitive accuracy with low false alarm rate and low computational cost
 
-<img width="800" src="assets/framework.png" />
+<img width="1000" src="assets/framework.png" />
 
 ## Paper Summary
 
 According to the abstract and Table 1 in the paper, SPIRE achieves a strong accuracy-efficiency trade-off on both `SIRST-UAVB` and `SIRST4`, with particularly strong performance on `SIRST4`.
 
-<img width="800" src="assets/expIMG.png" />
+<img width="1000" src="assets/expIMG.png" />
 
 | Method | Venue | UAVB Pre | UAVB Rec | UAVB F1 | UAVB Fa | SIRST4 Pre | SIRST4 Rec | SIRST4 F1 | SIRST4 Fa | FLOPs(G) | Params(M) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -31,7 +31,7 @@ According to the abstract and Table 1 in the paper, SPIRE achieves a strong accu
 | SCTransNet | TGRS'24 | 98.27 | 95.95 | 97.09 | 5.09 | 81.20 | 86.39 | 83.72 | 114.98 | 63.22 | 11.19 |
 | MSHNet | CVPR'24 | 71.90 | 88.02 | 79.09 | 104.27 | 90.68 | 92.86 | 91.47 | 60.51 | 38.16 | 4.07 |
 | SDSNet | TGRS'25 | 97.60 | 96.29 | 96.94 | 7.12 | 87.35 | 88.27 | 87.81 | 73.48 | 42.42 | 2.49 |
-| L2SKNet | TGRS'25 | 95.83 | 89.04 | 92.31 | 11.70 | 92.89 | 91.42 | 92.16 | 40.20 | 43.09 | 0.90 |
+| L$^2$SKNet | TGRS'25 | 95.83 | 89.04 | 92.31 | 11.70 | 92.89 | 91.42 | 92.16 | 40.20 | 43.09 | 0.90 |
 | **SPIRE (Ours)** | - | **99.82** | 94.44 | 97.05 | **1.02** | **95.00** | **94.21** | **94.60** | **28.53** | 7.68 | 0.29 |
 
 Pretrained weights for the reported SPIRE models are provided in the `weights/` folder, including the checkpoints for `SIRST-UAVB` and `SIRST4`.
@@ -47,7 +47,7 @@ SPIRE/
 ├── model/                  # SPIRENet definition
 ├── modules/                # network building blocks
 ├── utils/                  # data, training, evaluation, logging, plotting
-├── tools/                  # standalone evaluation scripts
+├── tools/                  # data conversion and evaluation scripts
 ├── train.py                # single-GPU training
 ├── train_ddp.py            # multi-GPU DDP training
 ├── evaluate.py             # full evaluation / JSON-only evaluation
@@ -110,6 +110,51 @@ Example:
 ```bash
 /root/autodl-tmp/Datasets/SIRST4
 ```
+
+### Convert Masks to Training JSON
+`tools/Mask_Cluster_2_Json_Show_Best.py` can quickly convert binary masks into a COCO-style annotation JSON that is directly usable by SPIRE training. This is convenient when you want to adapt a new infrared dataset to the SPIRE format, or rapidly test different datasets without manually re-annotating single-point labels.
+
+The script performs 8-connected component clustering on each mask and exports:
+- target centroids to the `keypoints` field
+- per-target bounding boxes to the `bbox` field
+- per-target areas to the `area` field
+- one annotation entry for every image, including empty images without targets
+
+It can also optionally save visualization images for quick verification of the converted annotations.
+
+Expected file organization:
+- `mask_dir`: binary mask directory used as the annotation source
+- `image_dir`: original image directory for the same file names
+- `out_json`: output COCO-style annotation JSON
+- `out_vis_dir`: optional visualization output directory
+
+Important notes:
+- The mask file names should match the image file names one by one.
+- Non-zero pixels are treated as foreground targets.
+- The generated JSON can be placed under `annotations/annotations.json` in the dataset root, so the dataset can be used by `train.py` or `train_ddp.py` directly.
+
+Current usage:
+The current version of the script calls `build_coco_from_masks(...)` in `__main__`, so you only need to modify the path arguments at the bottom of the file and then run it.
+
+```python
+build_coco_from_masks(
+    mask_dir="/path/to/masks",
+    image_dir="/path/to/images",
+    out_json="/path/to/annotations/annotations.json",
+    out_vis_dir="/path/to/vis",
+    save_vis=True
+)
+```
+
+Then run:
+```bash
+python tools/Mask_Cluster_2_Json_Show_Best.py
+```
+
+Recommended workflow for a new dataset:
+1. Prepare `images/`, `img_idx/train.txt`, and `img_idx/test.txt`.
+2. Convert the mask annotations to `annotations/annotations.json` with `tools/Mask_Cluster_2_Json_Show_Best.py`.
+3. Point `--data_path` to the dataset root and start training or evaluation as usual.
 
 ## Training
 Training outputs are saved to:
