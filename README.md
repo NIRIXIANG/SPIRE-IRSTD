@@ -372,7 +372,17 @@ This repository builds substantially on [WZMIAOMIAO's deep-learning-for-image-pr
 It also benefits from [Basic-IRSTD](https://github.com/XinyiYing/BasicIRSTD). We thank Xinyi Ying for making this valuable codebase publicly available.
 
 ## Citation
-If you find this repository useful, please cite the SPIRE paper once the final bibliographic information is released. 
+```bash
+@misc{ni2026rethinkingirstdsinglepointsupervision,
+      title={Rethinking IRSTD: Single-Point Supervision Guided Encoder-only Framework is Enough for Infrared Small Target Detection}, 
+      author={Rixiang Ni and Boyang Li and Jun Chen and Yonghao Li and Feiyu Ren and Yuji Wang and Haoyang Yuan and Wujiao He and Wei An},
+      year={2026},
+      eprint={2604.05363},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2604.05363}, 
+}
+```
 
 ## Contact
 Welcome to raise issues or email to nirixiang@nudt.edu.cn for any question.
