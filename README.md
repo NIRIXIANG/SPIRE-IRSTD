@@ -21,7 +21,7 @@ According to the abstract and Table 1 in the paper, SPIRE achieves a strong accu
 
 <img width="1000" src="assets/expIMG.png" />
 
-| Method | Venue | UAVB Pre | UAVB Rec | UAVB F1 | UAVB Fa | SIRST4 Pre | SIRST4 Rec | SIRST4 F1 | SIRST4 Fa | FLOPs(G) | Params(M) |
+| Method | Venue | UAVB Pre | UAVB Rec(Pd) | UAVB F1 | UAVB Fa | SIRST4 Pre | SIRST4 Rec(Pd) | SIRST4 F1 | SIRST4 Fa | FLOPs(G) | Params(M) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | ACM | WACV'21 | 87.01 | 71.16 | 78.29 | 34.04 | 90.17 | 70.38 | 79.05 | 44.08 | 2.51 | 0.40 |
 | ALCNet | TGRS'21 | 95.06 | 81.11 | 87.53 | 12.72 | 91.45 | 72.41 | 80.82 | 38.90 | 2.36 | 0.43 |
