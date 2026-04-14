@@ -181,11 +181,10 @@ Each training directory typically contains:
 python train.py \
   --data_path "/root/autodl-tmp/Datasets/SIRST4" \
   --fixed_size 512 512 \
-  --batchSize 16 \
-  --nEpochs 1000 \
+  --batchSize 8 \
+  --nEpochs 500 \
   --lr 0.005 \
-  --eval_interval 1 \
-  --threads 4
+  --eval_interval 10 \
 ```
 
 Common arguments:
@@ -207,13 +206,13 @@ Notes:
 ### 2. Multi-GPU DDP Training
 ```bash
 python train_ddp.py \
-  --world_size 2 \
+  --world_size 4 \
   --data_path "/root/autodl-tmp/Datasets/SIRST4" \
   --fixed_size 512 512 \
   --batchSize 2 \
-  --nEpochs 1000 \
-  --lr 0.005 \
-  --eval_interval 1
+  --nEpochs 500 \
+  --lr 0.05 \
+  --eval_interval 10
 ```
 
 Notes:
@@ -228,9 +227,9 @@ torchrun --nproc_per_node=2 train_ddp.py \
   --data_path "/root/autodl-tmp/Datasets/SIRST4" \
   --fixed_size 512 512 \
   --batchSize 2 \
-  --nEpochs 1000 \
+  --nEpochs 500 \
   --lr 0.005 \
-  --eval_interval 1
+  --eval_interval 10
 ```
 
 ## Evaluation
