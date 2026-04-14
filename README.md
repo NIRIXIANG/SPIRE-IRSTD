@@ -1,6 +1,7 @@
-# Rethinking IRSTD: SPIRE is Enough for Infrared Small Target Detection
+# Rethinking IRSTD: Single-Point Supervision Guided Encoder-only Framework is Enough for Infrared Small Target Detection
 
-Official PyTorch implementation of **Rethinking IRSTD: Single-Point Supervision Guided Encoder-only Framework is Enough for Infrared Small Target Detection**.
+Official PyTorch implementation.  
+** 重新思考 IRSTD：仅单点监督引导编码器框架足以满足红外小目标检测 ** 的官方 PyTorch 实现。
 
 ## Overview
 Infrared small target detection (IRSTD) is commonly formulated as a pixel-wise segmentation problem with heavy encoder-decoder architectures. However, infrared targets often occupy only a few pixels, have ambiguous boundaries, and are more naturally associated with localization rather than dense contour reconstruction.
