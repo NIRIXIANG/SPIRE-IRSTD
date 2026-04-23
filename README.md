@@ -88,8 +88,7 @@ Download links:
   [Baidu Netdisk](https://pan.baidu.com/s/1kx2YXJV2bDCekSRndnPRWg?pwd=1111) (`SIRST-UAVB_OnlyUAV_Form.zip`, extraction code: `1111`)
   🔴 **To ensure fair comparison of target-level evaluation metrics, we fixed cases in the original dataset where the GT mask of a single target was disconnected.**
 - `SIRST4`:
-  [Baidu Netdisk](https://pan.baidu.com/s/1m7TZH31CWnBp1pCqSg0k3g?pwd=1111) (`SIRST4-ForLiTE.zip`, extraction code: `1111`)
-
+  [Baidu Netdisk](https://pan.baidu.com/s/1CaewMUYjGzSnZVrqaUY28Q?pwd=1111) (`SIRST4-ForLiTE.zip`, extraction code: `1111`)
 The code currently supports two dataset layouts. The recommended unified layout is:
 
 ```text
@@ -176,6 +175,10 @@ Each training directory typically contains:
 - `f1_best_epoch*.pth`
 - `rec_best_epoch*.pth`
 - `pre_best_epoch*.pth`
+
+Recommended training resolutions:
+- `SIRST4`: 512*512
+- `SIRST-UAVB`: 640*640
 
 ### 1. Single-GPU Training
 ```bash
