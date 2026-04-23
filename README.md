@@ -86,7 +86,7 @@ Download links:
 
 - `SIRST-UAVB`:
   [Baidu Netdisk](https://pan.baidu.com/s/1kx2YXJV2bDCekSRndnPRWg?pwd=1111) (`SIRST-UAVB_OnlyUAV_Form.zip`, extraction code: `1111`)
-  🔴 **To ensure fair comparison of target-level evaluation metrics, we fixed cases in the original dataset where the mask annotation of a single target was disconnected.**
+  🔴 **To ensure fair comparison of target-level evaluation metrics, we fixed cases in the original dataset where the GT mask of a single target was disconnected.**
 - `SIRST4`:
   [Baidu Netdisk](https://pan.baidu.com/s/1m7TZH31CWnBp1pCqSg0k3g?pwd=1111) (`SIRST4-ForLiTE.zip`, extraction code: `1111`)
 
