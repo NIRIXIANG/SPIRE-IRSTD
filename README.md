@@ -176,7 +176,7 @@ Each training directory typically contains:
 - `rec_best_epoch*.pth`
 - `pre_best_epoch*.pth`
 
-Recommended training resolutions:
+🔴**Recommended training resolutions:**
 - `SIRST4`: 512*512
 - `SIRST-UAVB`: 640*640
 
