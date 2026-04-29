@@ -131,13 +131,8 @@ def save_comparison_figure(
 
 
 
-    
-
-
-
-
 # ===========================
-#   主构建函数（可直接 import 使用）
+#   主构建函数
 # ===========================
 def build_coco_from_masks(mask_dir,
                           image_dir,
