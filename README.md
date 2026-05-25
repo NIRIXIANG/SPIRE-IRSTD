@@ -176,19 +176,39 @@ Each training directory typically contains:
 - `rec_best_epoch*.pth`
 - `pre_best_epoch*.pth`
 
+### Pretrained Weights and Training Settings
+The reported checkpoints are stored in the repository `weights/` folder. Their filenames encode the dataset, input size, epoch count, and learning rate.
+
+| Dataset | Weight file | Input size | Epoch | Learning rate |
+| --- | --- | --- | --- | --- |
+| `SIRST4` | `weights/SPIRE-SIRST4-512-epoch230-lr0.005.pth` | 512*512 | 230 | 0.005 |
+| `SIRST-UAVB` | `weights/SPIRE-UAVB-640-epoch230-lr0.005.pth` | 640*640 | 230 | 0.005 |
+
 🔴 **Recommended training resolutions:**
 - `SIRST4`: 512*512
 - `SIRST-UAVB`: 640*640
 
 ### 1. Single-GPU Training
+Example for `SIRST4`:
 ```bash
 python train.py \
   --data_path "/root/autodl-tmp/Datasets/SIRST4" \
   --fixed_size 512 512 \
   --batchSize 8 \
-  --nEpochs 500 \
+  --nEpochs 230 \
   --lr 0.005 \
-  --eval_interval 10 \
+  --eval_interval 10
+```
+
+Example for `SIRST-UAVB`:
+```bash
+python train.py \
+  --data_path "/root/autodl-tmp/Datasets/SIRST-UAVB_OnlyUAV_Form" \
+  --fixed_size 640 640 \
+  --batchSize 8 \
+  --nEpochs 230 \
+  --lr 0.005 \
+  --eval_interval 10
 ```
 
 Common arguments:
@@ -208,14 +228,27 @@ Notes:
 - Checkpoints are maintained in four slots: `F1`, `Recall`, `Precision`, and `Last`.
 
 ### 2. Multi-GPU DDP Training
+Example for `SIRST4`:
 ```bash
 python train_ddp.py \
   --world_size 4 \
   --data_path "/root/autodl-tmp/Datasets/SIRST4" \
   --fixed_size 512 512 \
   --batchSize 2 \
-  --nEpochs 500 \
-  --lr 0.05 \
+  --nEpochs 230 \
+  --lr 0.005 \
+  --eval_interval 10
+```
+
+Example for `SIRST-UAVB`:
+```bash
+python train_ddp.py \
+  --world_size 4 \
+  --data_path "/root/autodl-tmp/Datasets/SIRST-UAVB_OnlyUAV_Form" \
+  --fixed_size 640 640 \
+  --batchSize 2 \
+  --nEpochs 230 \
+  --lr 0.005 \
   --eval_interval 10
 ```
 
@@ -231,10 +264,12 @@ torchrun --nproc_per_node=2 train_ddp.py \
   --data_path "/root/autodl-tmp/Datasets/SIRST4" \
   --fixed_size 512 512 \
   --batchSize 2 \
-  --nEpochs 500 \
+  --nEpochs 230 \
   --lr 0.005 \
   --eval_interval 10
 ```
+
+For `SIRST-UAVB`, use `--fixed_size 640 640` with the same `--nEpochs 230` and `--lr 0.005` settings.
 
 ## Evaluation
 Evaluation outputs are saved to:
@@ -250,11 +285,20 @@ Evaluation utilities:
 - `tools/eval_from_mask.py`: fast target-level evaluation for mask or heatmap outputs from other encoder-decoder methods
 
 ### 1. Full Evaluation
+Example for `SIRST4`:
 ```bash
 python evaluate.py \
-  --weights_path "/root/autodl-tmp/SPIRE/train_results/20260402_120254_SPIRENet_512_SIRST4_0.005_2_ddp/f1_best_epoch3.pth" \
+  --weights_path "weights/SPIRE-SIRST4-512-epoch230-lr0.005.pth" \
   --data_path "/root/autodl-tmp/Datasets/SIRST4" \
   --fixed_size 512 512
+```
+
+Example for `SIRST-UAVB`:
+```bash
+python evaluate.py \
+  --weights_path "weights/SPIRE-UAVB-640-epoch230-lr0.005.pth" \
+  --data_path "/root/autodl-tmp/Datasets/SIRST-UAVB_OnlyUAV_Form" \
+  --fixed_size 640 640
 ```
 
 Default behavior:
@@ -278,10 +322,10 @@ Common arguments:
 If `predictions_coco.json` is already available, you can directly re-evaluate it:
 ```bash
 python evaluate.py \
-  --weights_path "/root/autodl-tmp/SPIRE/20260130_LiTENet_SIRST4_16_512_0.005_1000/model-230.pth" \
+  --weights_path "weights/SPIRE-SIRST4-512-epoch230-lr0.005.pth" \
   --data_path "/root/autodl-tmp/Datasets/SIRST4" \
   --json_eval \
-  --pred_json "/root/autodl-tmp/SPIRE/eva_results/20260130_LiTENet_SIRST4_16_512_0.005_1000/predictions_coco.json"
+  --pred_json "/root/autodl-tmp/SPIRE/eva_results/SPIRE-SIRST4-512-epoch230-lr0.005/predictions_coco.json"
 ```
 
 This mode directly calls `tools/eval_from_json.py` inside `evaluate.py` and additionally produces:
@@ -366,6 +410,8 @@ Evaluation phase:
 - `json_eval_report.txt`: JSON-only evaluation report
 
 ## Remarks
+- The reported checkpoints are stored in the `weights/` folder.
+- The current checkpoint names encode the input size, epoch count, and learning rate used for each dataset.
 - The current implementation focuses on **target-level localization evaluation**, rather than mask-based segmentation evaluation.
 - Default thresholds in `train.py`, `train_ddp.py`, and `evaluate.py` are aligned.
 - Output directories use a Linux/Windows-safe timestamp format: `YYYYMMDD_HHMMSS`.
