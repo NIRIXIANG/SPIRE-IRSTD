@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "source_pptx": "C:/Users/YJ/Desktop/小论文/SPIRE/绘图/绘图20260210.pptx",
+  "source_pptx_sha256": "E99DA7098D1667FB493A3ACF8E432E0E1EE314EBBFF48CB24196F7BE4BB42B44",
+  "paper_prediction_responses": [
+    {
+      "variant": "prps",
+      "file": "response-prps.png",
+      "source_member": "ppt/media/image55.png",
+      "sha256": "36EE3475307D4F174BA1D87EE0D0044A62260B0AF156ADB8D9F49AADEDDBC70C",
+      "bytes": 95862,
+      "width": 3200,
+      "height": 2400,
+      "exact_copy": true,
+      "preserve_original_color_scale": true,
+      "evidence_class": "paper_prediction_response_raster"
+    },
+    {
+      "variant": "single_point_impulse",
+      "file": "response-impulse.png",
+      "source_member": "ppt/media/image54.png",
+      "sha256": "13DC2FB69CEA4A5FB1649B606B45F934A0E51C69677101B69B6ED991343A3A86",
+      "bytes": 118404,
+      "width": 3200,
+      "height": 2400,
+      "exact_copy": true,
+      "preserve_original_color_scale": true,
+      "evidence_class": "paper_prediction_response_raster"
+    },
+    {
+      "variant": "unconstrained_gaussian",
+      "file": "response-gaussian.png",
+      "source_member": "ppt/media/image56.png",
+      "sha256": "52CB50FC220C3E26D6D93A8C0BD189EE9BFE50BD9674708EE105EA4920A71CC2",
+      "bytes": 124628,
+      "width": 3200,
+      "height": 2400,
+      "exact_copy": true,
+      "preserve_original_color_scale": true,
+      "evidence_class": "paper_prediction_response_raster"
+    }
+  ],
+  "mechanism_reconstructions": [
+    {
+      "variant": "prps",
+      "title": "PRPS",
+      "matrix_shape": [
+        13,
+        13
+      ],
+      "matrix_min": 0.0,
+      "matrix_max": 1.0,
+      "files": [
+        {
+          "file": "target-prps.webp",
+          "sha256": "2357861F27FE948854E206EEEDD7672EA970023420C84C643A7F68B9F2BBB41E",
+          "bytes": 20282,
+          "width": 1600,
+          "height": 1200
+        }
+      ],
+      "evidence_class": "mechanism_reconstruction",
+      "not_a_model_prediction": true,
+      "fixed_centroid": true
+    },
+    {
+      "variant": "single_point_impulse",
+      "title": "Single-point impulse",
+      "matrix_shape": [
+        13,
+        13
+      ],
+      "matrix_min": 0.0,
+      "matrix_max": 1.0,
+      "files": [
+        {
+          "file": "target-impulse.webp",
+          "sha256": "E5680FCAA33A694D57D00E8B4B77E461450585D28D6B744F2280BDE72572C2C1",
+          "bytes": 22372,
+          "width": 1600,
+          "height": 1200
+        }
+      ],
+      "evidence_class": "mechanism_reconstruction",
+      "not_a_model_prediction": true,
+      "fixed_centroid": true
+    },
+    {
+      "variant": "unconstrained_gaussian",
+      "title": "Unconstrained Gaussian",
+      "matrix_shape": [
+        13,
+        13
+      ],
+      "matrix_min": 0.00012340980408667956,
+      "matrix_max": 1.0,
+      "files": [
+        {
+          "file": "target-gaussian.webp",
+          "sha256": "CCACC9A25A88870BFBD3DBFA8C792170E6F180E5A597F141B17AC5D4CA475580",
+          "bytes": 23608,
+          "width": 1600,
+          "height": 1200
+        }
+      ],
+      "evidence_class": "mechanism_reconstruction",
+      "not_a_model_prediction": true,
+      "fixed_centroid": true
+    }
+  ],
+  "mechanism_contract": {
+    "matrix_shape": [
+      13,
+      13
+    ],
+    "centroid_index_yx": [
+      6,
+      6
+    ],
+    "centroid_moves": false,
+    "gaussian_sigma": 2.0,
+    "gaussian_radius": 6,
+    "single_point_impulse": "one unit-valued center pixel; zero elsewhere",
+    "gaussian": "unit-peak isotropic Gaussian on compact 13 x 13 support",
+    "prps": "minmax(gaussian * minmax(synthetic radiometric patch))",
+    "synthetic_patch_min": 0.0,
+    "synthetic_patch_max": 1.0,
+    "evidence_boundary": "Mechanism reconstructions explain supervision definitions. They are not recovered training tensors, epochs, or model outputs."
+  }
+}

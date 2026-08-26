@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "sample_id": "2511",
+  "coordinate_space": {
+    "gt_and_predictions": "original image pixels, origin at top-left, x right, y down",
+    "raw_and_nms_response": "160 x 160 response grid for affine-padded 640 x 640 input"
+  },
+  "decoder": {
+    "threshold": 0.35,
+    "value_range": 0.35,
+    "max_num_targets": 8,
+    "post_processing": true
+  },
+  "matching": {
+    "maximum_distance_pixels": 5.0,
+    "algorithm": "GT-driven nearest unused prediction, inclusive <= distance"
+  },
+  "gt_points": [
+    {
+      "index": 0,
+      "x": 184.99967999999998,
+      "y": 280.999936,
+      "visibility": 1.0,
+      "annotation_id": 1682
+    }
+  ],
+  "predictions": [
+    {
+      "index": 0,
+      "decoder_slot": 0,
+      "x": 185.0,
+      "y": 281.0,
+      "score": 0.7499052286148071
+    }
+  ],
+  "matches": [
+    {
+      "gt_index": 0,
+      "prediction_index": 0,
+      "nearest_prediction_index": 0,
+      "distance_pixels": 0.0003263372488876832,
+      "matched": true
+    }
+  ],
+  "metrics": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+  },
+  "affine_transform_original_to_640": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      64.0
+    ]
+  ],
+  "reverse_transform_response_to_original": [
+    [
+      4.0,
+      0.0,
+      0.0
+    ],
+    [
+      8.895683702786857e-17,
+      4.0,
+      -64.00000000000001
+    ]
+  ],
+  "response_statistics": {
+    "raw_min": -0.00928107276558876,
+    "raw_max": 0.7499052286148071,
+    "raw_mean": 0.000272102392045781,
+    "nms_nonzero_count": 24413,
+    "unified_viridis_vmin": -0.00928107276558876,
+    "unified_viridis_vmax": 0.9492052793502808
+  }
+}

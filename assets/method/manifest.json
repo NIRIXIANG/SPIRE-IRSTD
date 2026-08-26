@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "asset_role": "paper_framework",
+  "evidence_type": "paper_figure_derivative",
+  "source": {
+    "logical_path": "Rethinking_IRSTD_Latex_20260622/figs_original_highres/framework.png",
+    "sha256": "75A77B7C3C35D9A9FC0BBB39E88BA94FB9932F789787F68657FC77A976222C7B",
+    "width": 13979,
+    "height": 7837
+  },
+  "export": {
+    "path": "public/assets/method/framework.webp",
+    "sha256": "EC53BB9EBD25B988F64E5485E97795B72D83D6894D975F18610D5F5476DF72F8",
+    "width": 2880,
+    "height": 1615,
+    "format": "WEBP",
+    "quality": 92,
+    "resampling": "LANCZOS"
+  },
+  "validation": "passed"
+}

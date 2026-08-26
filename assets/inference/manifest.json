@@ -1,0 +1,421 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-08-01T06:02:52.235285+00:00",
+  "generator": {
+    "script": "scripts/export_demo_assets.py",
+    "script_sha256": "1EC292E2C4973032C831E7D9F0573B53A60296FBCC0B26403C4B26DFA4EDE187",
+    "purpose": "fresh SPIRE UAVB project-page qualitative evidence"
+  },
+  "checkpoint": {
+    "logical_path": "weights/SPIRE-UAVB-640-epoch230-lr0.005.pth",
+    "expected_sha256": "58C8E2BA32C127562CB5DA37CAF7201E7EFB4D07D9E84704A2D29181B4D141C6",
+    "sha256": "58C8E2BA32C127562CB5DA37CAF7201E7EFB4D07D9E84704A2D29181B4D141C6",
+    "epoch": 230,
+    "strict_state_dict_load": true,
+    "state_tensor_count": 168
+  },
+  "implementation": {
+    "source": "local SPIRE checkout; see docs/inference-provenance.md",
+    "model_file": {
+      "logical_path": "model/spire_net.py",
+      "sha256": "85EABF5E2D35F7B7CC5C761A50F1941CE26DC4BD63C3AE0E4D6D6F149D994194"
+    },
+    "transforms_file": {
+      "logical_path": "utils/transforms.py",
+      "sha256": "8B76C76068F4B4B8AB7B1858A5F36F77DAFF33D64235CC754533EC563925F2A2"
+    },
+    "metrics_file": {
+      "logical_path": "utils/metrics.py",
+      "sha256": "781DAD9D7F761F9F08A406712EAD610D15EE1E8C6BA515F4A8B6EBBBF52BC76F"
+    },
+    "model": "SPIRENet(base_channel=32, num_joints=1)",
+    "parameter_count": 294753
+  },
+  "dataset": {
+    "logical_root": "SIRST-UAVB_OnlyUAV_Form",
+    "annotations": {
+      "logical_path": "annotations/annotations.json",
+      "sha256": "F23FCF3EF081B8376FF2B826CA3733EE1BDA2B7547960DE8169543D421AA2CF2"
+    },
+    "test_split": {
+      "logical_path": "img_idx/test.txt",
+      "sha256": "996F46ECF4D7DAF6F56E08E332FB746CB23BAD8DC3F77030A6AB31A9A7E9A141",
+      "count": 600
+    },
+    "samples": [
+      "2434",
+      "2688",
+      "2511"
+    ]
+  },
+  "parameters": {
+    "fixed_size_hw": [
+      640,
+      640
+    ],
+    "threshold": 0.35,
+    "value_range": 0.35,
+    "max_num_targets": 8,
+    "matching_distance_pixels": 5.0,
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "seed": 0
+  },
+  "unified_response_color_scale": {
+    "cmap": "viridis",
+    "vmin": -0.00928107276558876,
+    "vmax": 0.9492052793502808,
+    "shared_across_sample_ids": [
+      "2434",
+      "2688",
+      "2511"
+    ],
+    "source": "raw model output before NMS"
+  },
+  "environment": {
+    "python": "3.9.23",
+    "python_environment": "conda:pytorch",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.8.0+cu129",
+    "torchvision": "0.23.0+cu129",
+    "numpy": "2.0.2",
+    "opencv": "4.12.0",
+    "pillow": "11.0.0",
+    "matplotlib": "3.9.4",
+    "cuda_runtime": "12.9",
+    "cuda_available": true,
+    "device": "cuda:0",
+    "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false
+  },
+  "samples": [
+    {
+      "sample_id": "2434",
+      "official_test_split": true,
+      "web_base_url": "/SPIRE-IRSTD/assets/inference/2434/",
+      "source_image": {
+        "logical_path": "images/2434.png",
+        "size_wh": [
+          640,
+          512
+        ],
+        "sha256": "7704465DA615A944D64727B12A0AC591C233ADEE01C1985176A404EC6855D0D9"
+      },
+      "gt_points": [
+        {
+          "index": 0,
+          "x": 340.0,
+          "y": 248.500224,
+          "visibility": 1.0,
+          "annotation_id": 1596
+        }
+      ],
+      "predictions": [
+        {
+          "index": 0,
+          "decoder_slot": 0,
+          "x": 341.0,
+          "y": 249.0,
+          "score": 0.9492052793502808
+        }
+      ],
+      "matches": [
+        {
+          "gt_index": 0,
+          "prediction_index": 0,
+          "nearest_prediction_index": 0,
+          "distance_pixels": 1.1179338308576214,
+          "matched": true
+        }
+      ],
+      "metrics": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "response_shape_hw": [
+        160,
+        160
+      ],
+      "response_statistics": {
+        "raw_min": -0.0003880904405377805,
+        "raw_max": 0.9492052793502808,
+        "raw_mean": 0.0006519501912407577,
+        "nms_nonzero_count": 25278,
+        "unified_viridis_vmin": -0.00928107276558876,
+        "unified_viridis_vmax": 0.9492052793502808
+      },
+      "files": {
+        "input": {
+          "path": "public/assets/inference/2434/input.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2434/input.webp",
+          "bytes": 151436,
+          "sha256": "3237D79619310E7EB4D778F58E9FADFF2F95CBD3CA60CB5D10A1FCCCD17AB126"
+        },
+        "gt": {
+          "path": "public/assets/inference/2434/gt.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2434/gt.webp",
+          "bytes": 152202,
+          "sha256": "069E5CB886C22227039377B253CB45FE887B5A99951FB9F02C44A61470C08FAB"
+        },
+        "response": {
+          "path": "public/assets/inference/2434/response.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2434/response.webp",
+          "bytes": 13140,
+          "sha256": "54BDA3456BC5E063EAC5569727C04CF733968B88D46F6BAAE9B0295B2DE27B85"
+        },
+        "prediction": {
+          "path": "public/assets/inference/2434/prediction.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2434/prediction.webp",
+          "bytes": 152392,
+          "sha256": "CB72F2E86E572058AAFF084CE8917E701AA491D9A5777151C1089D858F4BFA9B"
+        },
+        "raw_response_npy": {
+          "path": "public/assets/inference/2434/response_raw.npy",
+          "url": "/SPIRE-IRSTD/assets/inference/2434/response_raw.npy",
+          "bytes": 102528,
+          "sha256": "DDD17E607F764D1A42A29E257BEE8001F9EF271D777FDD9AB7D986BF37CA58D7"
+        },
+        "nms_response_npy": {
+          "path": "public/assets/inference/2434/response_nms.npy",
+          "url": "/SPIRE-IRSTD/assets/inference/2434/response_nms.npy",
+          "bytes": 102528,
+          "sha256": "1EDC3680249DC475639C1554353B55886707713E8B698FD1CFA837677CE7CFC4"
+        },
+        "coordinates": {
+          "path": "public/assets/inference/2434/coordinates.json",
+          "url": "/SPIRE-IRSTD/assets/inference/2434/coordinates.json",
+          "bytes": 1714,
+          "sha256": "2C2BF39C012971B8DD222120190597052A22E8E434C92B58729F798DF0951209"
+        }
+      }
+    },
+    {
+      "sample_id": "2688",
+      "official_test_split": true,
+      "web_base_url": "/SPIRE-IRSTD/assets/inference/2688/",
+      "source_image": {
+        "logical_path": "images/2688.png",
+        "size_wh": [
+          640,
+          512
+        ],
+        "sha256": "145FC25E2792011EE517749A418CD076C1B3928285DED261F8BF8E385C5EE50C"
+      },
+      "gt_points": [
+        {
+          "index": 0,
+          "x": 396.49984000000006,
+          "y": 261.499904,
+          "visibility": 1.0,
+          "annotation_id": 1877
+        }
+      ],
+      "predictions": [
+        {
+          "index": 0,
+          "decoder_slot": 0,
+          "x": 395.0,
+          "y": 261.0,
+          "score": 0.3650050759315491
+        }
+      ],
+      "matches": [
+        {
+          "gt_index": 0,
+          "prediction_index": 0,
+          "nearest_prediction_index": 0,
+          "distance_pixels": 1.5809566834091957,
+          "matched": true
+        }
+      ],
+      "metrics": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "response_shape_hw": [
+        160,
+        160
+      ],
+      "response_statistics": {
+        "raw_min": -0.0035556755028665066,
+        "raw_max": 0.3650050759315491,
+        "raw_mean": 0.004335885867476463,
+        "nms_nonzero_count": 15158,
+        "unified_viridis_vmin": -0.00928107276558876,
+        "unified_viridis_vmax": 0.9492052793502808
+      },
+      "files": {
+        "input": {
+          "path": "public/assets/inference/2688/input.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2688/input.webp",
+          "bytes": 150236,
+          "sha256": "36C6618344BE49B22F935702CCC1A9FDBAA2961A57DDB74A5CAFF01FE243FB44"
+        },
+        "gt": {
+          "path": "public/assets/inference/2688/gt.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2688/gt.webp",
+          "bytes": 150864,
+          "sha256": "ECE480572FB43EB4F045A2BEBB63A023E2CD3AE94FD8C0170AF3610D0567A499"
+        },
+        "response": {
+          "path": "public/assets/inference/2688/response.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2688/response.webp",
+          "bytes": 20786,
+          "sha256": "3ADEC954317F0DE1DA8857BA84D55E073F99A1FAC48076761AD4032AF6D29F4F"
+        },
+        "prediction": {
+          "path": "public/assets/inference/2688/prediction.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2688/prediction.webp",
+          "bytes": 151302,
+          "sha256": "4A5269A53150417B57DB929E38592B7EAF7272198A279557BFB5F30EC70BFD2C"
+        },
+        "raw_response_npy": {
+          "path": "public/assets/inference/2688/response_raw.npy",
+          "url": "/SPIRE-IRSTD/assets/inference/2688/response_raw.npy",
+          "bytes": 102528,
+          "sha256": "AFC06655E6C2CC240C0DCF26EFFC449DF4B86C3C2778D91E6F97C9DE7FAA3BA9"
+        },
+        "nms_response_npy": {
+          "path": "public/assets/inference/2688/response_nms.npy",
+          "url": "/SPIRE-IRSTD/assets/inference/2688/response_nms.npy",
+          "bytes": 102528,
+          "sha256": "DF16493094B5D258AB7A415CA4FBA5369A43A3D205A7DEBC1246AA699017B245"
+        },
+        "coordinates": {
+          "path": "public/assets/inference/2688/coordinates.json",
+          "url": "/SPIRE-IRSTD/assets/inference/2688/coordinates.json",
+          "bytes": 1726,
+          "sha256": "E90B4288DCBA37021228E099AE5122855B68146E6A65C867D17B580B53BA9F66"
+        }
+      }
+    },
+    {
+      "sample_id": "2511",
+      "official_test_split": true,
+      "web_base_url": "/SPIRE-IRSTD/assets/inference/2511/",
+      "source_image": {
+        "logical_path": "images/2511.png",
+        "size_wh": [
+          640,
+          512
+        ],
+        "sha256": "141F35958871F04A66E2A3C2C6C657C51DAE85CB4EADB7CBA5E5037515109D09"
+      },
+      "gt_points": [
+        {
+          "index": 0,
+          "x": 184.99967999999998,
+          "y": 280.999936,
+          "visibility": 1.0,
+          "annotation_id": 1682
+        }
+      ],
+      "predictions": [
+        {
+          "index": 0,
+          "decoder_slot": 0,
+          "x": 185.0,
+          "y": 281.0,
+          "score": 0.7499052286148071
+        }
+      ],
+      "matches": [
+        {
+          "gt_index": 0,
+          "prediction_index": 0,
+          "nearest_prediction_index": 0,
+          "distance_pixels": 0.0003263372488876832,
+          "matched": true
+        }
+      ],
+      "metrics": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "response_shape_hw": [
+        160,
+        160
+      ],
+      "response_statistics": {
+        "raw_min": -0.00928107276558876,
+        "raw_max": 0.7499052286148071,
+        "raw_mean": 0.000272102392045781,
+        "nms_nonzero_count": 24413,
+        "unified_viridis_vmin": -0.00928107276558876,
+        "unified_viridis_vmax": 0.9492052793502808
+      },
+      "files": {
+        "input": {
+          "path": "public/assets/inference/2511/input.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2511/input.webp",
+          "bytes": 188050,
+          "sha256": "524B1C10ED9822D10695AA841FFF3111226FD0860ED06D5303B25728BCF3A9E4"
+        },
+        "gt": {
+          "path": "public/assets/inference/2511/gt.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2511/gt.webp",
+          "bytes": 188642,
+          "sha256": "38A31AAE8C029C5E2D6F1D43FA980664BDB6A0ED410FE1A09EAECB87F6830488"
+        },
+        "response": {
+          "path": "public/assets/inference/2511/response.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2511/response.webp",
+          "bytes": 13014,
+          "sha256": "69C552CBDB520C2628E0DD543EEB8E6664340D93D19D62BA74CA379D8BC7307A"
+        },
+        "prediction": {
+          "path": "public/assets/inference/2511/prediction.webp",
+          "url": "/SPIRE-IRSTD/assets/inference/2511/prediction.webp",
+          "bytes": 189038,
+          "sha256": "DDA2B02A1FBF4D12B52672EA35E400DFE45642F066943E85019B5B7D623F3AD7"
+        },
+        "raw_response_npy": {
+          "path": "public/assets/inference/2511/response_raw.npy",
+          "url": "/SPIRE-IRSTD/assets/inference/2511/response_raw.npy",
+          "bytes": 102528,
+          "sha256": "37D4D2D5AAC5673120CB6B7F0EE392C04D4FFA8381E9129F0691F5C0BD32E83F"
+        },
+        "nms_response_npy": {
+          "path": "public/assets/inference/2511/response_nms.npy",
+          "url": "/SPIRE-IRSTD/assets/inference/2511/response_nms.npy",
+          "bytes": 102528,
+          "sha256": "B051E31744B3B7FCE3511E385A1175455B9B10B773D4839A615BBB85C7164903"
+        },
+        "coordinates": {
+          "path": "public/assets/inference/2511/coordinates.json",
+          "url": "/SPIRE-IRSTD/assets/inference/2511/coordinates.json",
+          "bytes": 1727,
+          "sha256": "2FB798F2B277975ED0188628BF373DEF600C50C968077B6FFD9E6A64352B3D10"
+        }
+      }
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "checked_sample_count": 3,
+    "checked_asset_count": 21,
+    "weights_sha256_verified": true,
+    "all_samples_in_official_test_split": true,
+    "strict_state_dict_load": true,
+    "manifest_file_records_verified": true,
+    "lossless_input_webp_pixels_verified": true,
+    "response_arrays_reread_equal": true,
+    "coordinate_json_full_reread_equal": true,
+    "all_public_images_verified_as_webp": true,
+    "overlay_dimensions_verified": true,
+    "staging_validation_status": "passed",
+    "publication_protocol": "manifest invalidated first; staged validation; file replacement; final validation; passed manifest published last"
+  }
+}

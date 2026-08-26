@@ -1,0 +1,73 @@
+{
+  "_framework-CSI8Plig.js": {
+    "file": "_next/static/chunks/framework-CSI8Plig.js",
+    "name": "framework",
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js"
+    ]
+  },
+  "_rolldown-runtime-hePW80VL.js": {
+    "file": "_next/static/chunks/rolldown-runtime-hePW80VL.js",
+    "name": "rolldown-runtime"
+  },
+  "app/site-shell.tsx": {
+    "file": "_next/static/chunks/site-shell-0EcuWiaT.js",
+    "name": "site-shell",
+    "src": "app/site-shell.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-CSI8Plig.js",
+      "virtual:vinext-app-browser-entry"
+    ],
+    "dynamicImports": [
+      "src/main.ts"
+    ]
+  },
+  "node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "_next/static/chunks/layout-segment-context-Bu7KEG5R.js",
+    "name": "layout-segment-context",
+    "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-CSI8Plig.js",
+      "virtual:vinext-app-browser-entry"
+    ]
+  },
+  "node_modules/vinext/dist/shims/streamed-icons.js": {
+    "file": "_next/static/chunks/streamed-icons-C-Zk4-IK.js",
+    "name": "streamed-icons",
+    "src": "node_modules/vinext/dist/shims/streamed-icons.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-CSI8Plig.js"
+    ]
+  },
+  "src/main.ts": {
+    "file": "_next/static/chunks/main-Bg98KUgQ.js",
+    "name": "main",
+    "src": "src/main.ts",
+    "isDynamicEntry": true,
+    "css": [
+      "_next/static/css/main.BJXzYRwc.css"
+    ]
+  },
+  "virtual:vinext-app-browser-entry": {
+    "file": "_next/static/chunks/index-Cm6dY6VB.js",
+    "name": "index",
+    "src": "virtual:vinext-app-browser-entry",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-CSI8Plig.js"
+    ],
+    "dynamicImports": [
+      "virtual:vinext-app-browser-entry",
+      "node_modules/vinext/dist/shims/layout-segment-context.js",
+      "app/site-shell.tsx",
+      "node_modules/vinext/dist/shims/streamed-icons.js"
+    ]
+  }
+}

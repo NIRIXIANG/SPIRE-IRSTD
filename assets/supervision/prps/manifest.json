@@ -1,0 +1,165 @@
+{
+  "schema_version": 2,
+  "figure": "PRPS target construction",
+  "source": {
+    "type": "conceptual_schematic",
+    "profile": "analytic fixed-wing UAV-like local radiometric profile",
+    "components": [
+      {
+        "name": "fuselage",
+        "weight": 0.82,
+        "cx": 0.0,
+        "cy": 0.15,
+        "sx": 0.58,
+        "sy": 2.55,
+        "theta_deg": 0.0
+      },
+      {
+        "name": "nose",
+        "weight": 0.78,
+        "cx": 0.0,
+        "cy": -2.1,
+        "sx": 0.68,
+        "sy": 0.78,
+        "theta_deg": 0.0
+      },
+      {
+        "name": "left_main_wing",
+        "weight": 0.74,
+        "cx": -1.45,
+        "cy": -0.05,
+        "sx": 1.62,
+        "sy": 0.48,
+        "theta_deg": -9.0
+      },
+      {
+        "name": "right_main_wing",
+        "weight": 0.74,
+        "cx": 1.45,
+        "cy": -0.05,
+        "sx": 1.62,
+        "sy": 0.48,
+        "theta_deg": 9.0
+      },
+      {
+        "name": "left_tailplane",
+        "weight": 0.43,
+        "cx": -0.62,
+        "cy": 2.05,
+        "sx": 0.84,
+        "sy": 0.32,
+        "theta_deg": -7.0
+      },
+      {
+        "name": "right_tailplane",
+        "weight": 0.43,
+        "cx": 0.62,
+        "cy": 2.05,
+        "sx": 0.84,
+        "sy": 0.32,
+        "theta_deg": 7.0
+      }
+    ],
+    "component_combination": "root-sum-square (p=2) to avoid overlap amplification",
+    "not_a_dataset_sample": true,
+    "not_a_segmentation_mask": true
+  },
+  "paper_parameters": {
+    "sigma": 2.0,
+    "radius": 6.0
+  },
+  "construction": {
+    "local-radiometric": "Illustrative C_k for mechanism visualization; training C_k is the min-max normalized local image patch",
+    "gaussian-prior": "G_k = unit-peak isotropic Gaussian",
+    "contrast-aware-fusion": "H_k = Norm(G_k * C_k)"
+  },
+  "visualization": {
+    "conceptual_schematic": true,
+    "measured_network_output": false,
+    "gaussian_modified": false,
+    "paper_operator_modified": false,
+    "panel_i_display": "three-dimensional UAV-like response surface; height and color encode C_k",
+    "panels_ii_iii_display": "height and color encode value",
+    "shared_numeric_scale": [
+      0.0,
+      1.0
+    ],
+    "shared_camera": {
+      "elevation_degrees": 28,
+      "azimuth_degrees": -52,
+      "z_range": [
+        0.0,
+        1.0
+      ],
+      "box_aspect": [
+        1.0,
+        1.0,
+        0.62
+      ]
+    },
+    "shared_xy_domain": [
+      -6.0,
+      6.0
+    ],
+    "shared_contour_levels": [
+      0.18,
+      0.38,
+      0.58,
+      0.78
+    ]
+  },
+  "diagnostics": {
+    "central_energy_fraction_r_le_2": {
+      "C_k": 0.476706,
+      "H_k": 0.68585
+    },
+    "weighted_std_xy": {
+      "C_k": [
+        1.574773,
+        1.936146
+      ],
+      "H_k": [
+        1.198493,
+        1.388769
+      ]
+    }
+  },
+  "files": {
+    "local-radiometric": {
+      "png": {
+        "url": "/SPIRE-IRSTD/assets/supervision/prps/local-radiometric.png",
+        "bytes": 276362,
+        "sha256": "60DC594CA1DAF8B7DF25501E02006899E4D4E07C700A1AE07404932642ACBC1D"
+      },
+      "webp": {
+        "url": "/SPIRE-IRSTD/assets/supervision/prps/local-radiometric.webp",
+        "bytes": 76324,
+        "sha256": "F6ABC3D68BF24D3CF08AF97C6BF5AD3D575C6A764EDBC1B48569BB349EC48A86"
+      }
+    },
+    "gaussian-prior": {
+      "png": {
+        "url": "/SPIRE-IRSTD/assets/supervision/prps/gaussian-prior.png",
+        "bytes": 299817,
+        "sha256": "35575DE1F00A795B0013FF70D7323F76115B938B0953986F4A8A1428EC92D5D7"
+      },
+      "webp": {
+        "url": "/SPIRE-IRSTD/assets/supervision/prps/gaussian-prior.webp",
+        "bytes": 76314,
+        "sha256": "91C6E55FE8FA8465E0249AF0113D28B7D6809B7E7FF1992235A0CD46FB3954A6"
+      }
+    },
+    "contrast-aware-fusion": {
+      "png": {
+        "url": "/SPIRE-IRSTD/assets/supervision/prps/contrast-aware-fusion.png",
+        "bytes": 273236,
+        "sha256": "A61B76556B0B21A157303811875965D827EEED90803E944342BBC777A214E2D7"
+      },
+      "webp": {
+        "url": "/SPIRE-IRSTD/assets/supervision/prps/contrast-aware-fusion.webp",
+        "bytes": 77254,
+        "sha256": "5878FF46D176A2103AEEB8232A517DA882E782A414CEBAD883C2BD2A5554C65C"
+      }
+    }
+  }
+}
