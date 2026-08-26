@@ -2,6 +2,8 @@
 
 Official PyTorch implementation.  
 
+**Project Page:** [https://nirixiang.github.io/](https://nirixiang.github.io/)
+
 ## Overview
 Infrared small target detection (IRSTD) is commonly formulated as a pixel-wise segmentation problem with heavy encoder-decoder architectures. However, infrared targets often occupy only a few pixels, have ambiguous boundaries, and are more naturally associated with localization rather than dense contour reconstruction.
 
