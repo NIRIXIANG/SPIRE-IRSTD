@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["_next/static/chunks/main-Bg98KUgQ.js","_next/static/css/main.BJXzYRwc.css"])))=>i.map(i=>d[i]);
-import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./framework-CSI8Plig.js";import{t as r}from"./index-Cm6dY6VB.js";var i=e(n(),1),a=`<!doctype html>
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["_next/static/chunks/main-BWgnrpC0.js","_next/static/css/main.NTzEYhZK.css"])))=>i.map(i=>d[i]);
+import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./framework-CSI8Plig.js";import{t as r}from"./index-Bm7dhJjJ.js";var i=e(n(),1),a=`<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -43,7 +43,7 @@ import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./f
             />
             <div class="hero-conference-lockup">
               <p class="hero-conference-name">
-                This paper has been accepted by the 19th European Conference on Computer Vision (ECCV 2026).
+                Accepted by the 19th European Conference on Computer Vision (ECCV 2026)
               </p>
               <span class="hero-brandbar-rule" aria-hidden="true"></span>
             </div>
@@ -457,4 +457,4 @@ import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./f
     <script type="module" src="/src/main.ts"><\/script>
   </body>
 </html>
-`,o=t(),s=a.replace(/^[\s\S]*?<body[^>]*>/i,``).replace(/<\/body>[\s\S]*$/i,``).replace(/<script\s+type=["']module["']\s+src=["']\/src\/main\.ts["']\s*><\/script>/i,``);function c(){return(0,i.useEffect)(()=>{r(()=>import(`./main-Bg98KUgQ.js`),__vite__mapDeps([0,1]))},[]),(0,o.jsx)(`div`,{className:`site-root`,dangerouslySetInnerHTML:{__html:s}})}export{c as default};
+`,o=t(),s=a.replace(/^[\s\S]*?<body[^>]*>/i,``).replace(/<\/body>[\s\S]*$/i,``).replace(/<script\s+type=["']module["']\s+src=["']\/src\/main\.ts["']\s*><\/script>/i,``);function c(){return(0,i.useEffect)(()=>{r(()=>import(`./main-BWgnrpC0.js`),__vite__mapDeps([0,1]))},[]),(0,o.jsx)(`div`,{className:`site-root`,dangerouslySetInnerHTML:{__html:s}})}export{c as default};
