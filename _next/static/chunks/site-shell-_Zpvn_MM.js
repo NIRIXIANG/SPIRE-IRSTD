@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["_next/static/chunks/main-CdbLbQv9.js","_next/static/css/main.D20dNLWO.css"])))=>i.map(i=>d[i]);
-import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./framework-CSI8Plig.js";import{t as r}from"./index-DHa2E1ED.js";var i=e(n(),1),a=`<!doctype html>
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["_next/static/chunks/main--rtIkUFa.js","_next/static/css/main.kiN44kEe.css"])))=>i.map(i=>d[i]);
+import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./framework-CSI8Plig.js";import{t as r}from"./index-BESNEoZ3.js";var i=e(n(),1),a=`<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -50,24 +50,28 @@ import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./f
           </div>
 
           <aside class="engagement-panel" data-engagement aria-label="Page engagement">
-            <div class="engagement-view" title="Cumulative page views counted from this release">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
+            <div class="engagement-stat engagement-view" title="Cumulative page views counted from this release">
+              <svg class="engagement-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M2.2 12s3.4-6 9.8-6 9.8 6 9.8 6-3.4 6-9.8 6-9.8-6-9.8-6Z" />
                 <circle cx="12" cy="12" r="2.7" />
               </svg>
               <span class="engagement-value" data-view-count aria-live="polite">—</span>
-              <span class="engagement-label">Views</span>
+              <span class="sr-only">views</span>
             </div>
             <span class="engagement-divider" aria-hidden="true"></span>
-            <div class="engagement-like">
-              <button type="button" data-like-button aria-pressed="false" aria-label="Like this project page">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20.8 5.8a5.2 5.2 0 0 0-7.4 0L12 7.2l-1.4-1.4a5.2 5.2 0 0 0-7.4 7.4L12 22l8.8-8.8a5.2 5.2 0 0 0 0-7.4Z" />
-                </svg>
-                <span>Like</span>
-              </button>
-              <span class="engagement-value like-count" data-like-count aria-live="polite">—</span>
-            </div>
+            <button
+              class="engagement-stat engagement-like"
+              type="button"
+              data-like-button
+              aria-pressed="false"
+              aria-label="Like this project page"
+            >
+              <svg class="engagement-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.8 5.8a5.2 5.2 0 0 0-7.4 0L12 7.2l-1.4-1.4a5.2 5.2 0 0 0-7.4 7.4L12 22l8.8-8.8a5.2 5.2 0 0 0 0-7.4Z" />
+              </svg>
+              <span class="engagement-value" data-like-count aria-live="polite">—</span>
+              <span class="sr-only">likes</span>
+            </button>
             <span class="sr-only" data-counter-status aria-live="polite"></span>
           </aside>
 
@@ -713,4 +717,4 @@ import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./f
     <script type="module" src="/src/main.ts"><\/script>
   </body>
 </html>
-`,o=t(),s=a.replace(/^[\s\S]*?<body[^>]*>/i,``).replace(/<\/body>[\s\S]*$/i,``).replace(/<script\s+type=["']module["']\s+src=["']\/src\/main\.ts["']\s*><\/script>/i,``);function c(){return(0,i.useEffect)(()=>{r(()=>import(`./main-CdbLbQv9.js`),__vite__mapDeps([0,1]))},[]),(0,o.jsx)(`div`,{className:`site-root`,dangerouslySetInnerHTML:{__html:s}})}export{c as default};
+`,o=t(),s=a.replace(/^[\s\S]*?<body[^>]*>/i,``).replace(/<\/body>[\s\S]*$/i,``).replace(/<script\s+type=["']module["']\s+src=["']\/src\/main\.ts["']\s*><\/script>/i,``);function c(){return(0,i.useEffect)(()=>{r(()=>import(`./main--rtIkUFa.js`),__vite__mapDeps([0,1]))},[]),(0,o.jsx)(`div`,{className:`site-root`,dangerouslySetInnerHTML:{__html:s}})}export{c as default};
