@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "purpose": "Real-scene qualitative generalization showcase",
+  "training_split": "SIRST-UAVB (2400:600)",
+  "training_overlap": "Neither displayed real-scene sequence was included in training, as provided by the authors.",
+  "interpretation": "Qualitative evidence only; these videos are not part of the benchmark evaluation.",
+  "videos": [
+    {
+      "id": "real-scene-01",
+      "source_filename": "906c73d35c4ab65900ba801768d0b9bb_raw_notion_under5mb.mp4",
+      "asset": "real-scene-01.mp4",
+      "sha256": "415D10F6F8530C1913E4FF4115F46C5475D1586667F71E9CA0AB6CD893CDC95B",
+      "codec": "H.264/AVC High Profile, avc1, yuv420p",
+      "resolution": "960x768",
+      "fps": 20,
+      "duration_seconds": 6.0,
+      "audio": false,
+      "poster": "real-scene-01-poster.jpg",
+      "poster_time_seconds": 3.0,
+      "poster_sha256": "EFB60F26106D4D262760973C6043A34A505529674A4C35D384240A3FC25305EC"
+    },
+    {
+      "id": "real-scene-02",
+      "source_filename": "fd36b6658236c10a22a857d89002debe_raw_notion_under5mb.mp4",
+      "asset": "real-scene-02.mp4",
+      "sha256": "B2907AC538C0CB00EC8A63B1DF94F5782D9D9396EBA9331A253D13EF39DC0669",
+      "codec": "H.264/AVC High Profile, avc1, yuv420p",
+      "resolution": "960x768",
+      "fps": 20,
+      "duration_seconds": 4.5,
+      "audio": false,
+      "poster": "real-scene-02-poster.jpg",
+      "poster_time_seconds": 2.25,
+      "poster_sha256": "D05BDC0F7473FE525469327AC359D5DD3490891E2DBB71BB7E5A740A3627C9B1"
+    }
+  ]
+}

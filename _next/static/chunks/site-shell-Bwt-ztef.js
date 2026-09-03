@@ -1,5 +1,5 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["_next/static/chunks/main-BWgnrpC0.js","_next/static/css/main.NTzEYhZK.css"])))=>i.map(i=>d[i]);
-import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./framework-CSI8Plig.js";import{t as r}from"./index-Bm7dhJjJ.js";var i=e(n(),1),a=`<!doctype html>
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["_next/static/chunks/main-CQn8tuJq.js","_next/static/css/main.BRMB5NK9.css"])))=>i.map(i=>d[i]);
+import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./framework-CSI8Plig.js";import{t as r}from"./index-DOleVzIX.js";var i=e(n(),1),a=`<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,6 +29,28 @@ import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./f
   </head>
   <body>
     <a class="skip-link" href="#overview">Skip to overview</a>
+
+    <aside class="engagement-panel" data-engagement aria-label="Page engagement">
+      <div class="engagement-view" title="Public page views counted from this release">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M2.2 12s3.4-6 9.8-6 9.8 6 9.8 6-3.4 6-9.8 6-9.8-6-9.8-6Z" />
+          <circle cx="12" cy="12" r="2.7" />
+        </svg>
+        <span class="engagement-value" data-view-count aria-live="polite">—</span>
+        <span class="engagement-label">Views</span>
+      </div>
+      <span class="engagement-divider" aria-hidden="true"></span>
+      <div class="engagement-like">
+        <button type="button" data-like-button aria-pressed="false" aria-label="Like this project page">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.8 5.8a5.2 5.2 0 0 0-7.4 0L12 7.2l-1.4-1.4a5.2 5.2 0 0 0-7.4 7.4L12 22l8.8-8.8a5.2 5.2 0 0 0 0-7.4Z" />
+          </svg>
+          <span>Like</span>
+        </button>
+        <span class="engagement-value like-count" data-like-count aria-live="polite">—</span>
+      </div>
+      <span class="sr-only" data-counter-status aria-live="polite"></span>
+    </aside>
 
     <main id="main" class="project-section">
       <div class="project-container">
@@ -366,53 +388,287 @@ import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./f
           </div>
         </section>
 
-        <section id="results" class="content-block" aria-labelledby="results-title">
-          <h2 id="results-title" class="section-title">Reported Results</h2>
-          <p class="paragraph">
-            Values are taken from the final paper under the unified centroid protocol with a matching radius of
-            δ=5 pixels; Fa is reported in units of 10<sup>−8</sup>. On SIRST-UAVB, SPIRE combines high precision
-            with a low false-alarm rate, while its recall is not the highest entry. On SIRST4, the four target-level
-            metrics shown in the main table are the best reported entries.
-          </p>
-
-          <div class="results-table-wrap">
-            <table class="results-table">
-              <thead>
-                <tr>
-                  <th>Dataset</th>
-                  <th>Precision</th>
-                  <th>Recall</th>
-                  <th>F1</th>
-                  <th>Fa</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>SIRST-UAVB</th>
-                  <td>99.82%</td>
-                  <td>94.44%</td>
-                  <td><strong>97.05%</strong></td>
-                  <td>1.02</td>
-                </tr>
-                <tr>
-                  <th>SIRST4</th>
-                  <td>95.00%</td>
-                  <td>94.21%</td>
-                  <td><strong>94.60%</strong></td>
-                  <td>28.53</td>
-                </tr>
-              </tbody>
-            </table>
+        <section
+          id="real-world"
+          class="content-block real-world-section"
+          aria-labelledby="real-world-title"
+          data-qa="real-world"
+        >
+          <div class="real-world-heading">
+            <div>
+              <p class="section-eyebrow">Unseen real scenes</p>
+              <h2 id="real-world-title" class="section-title">Real-World Video Demonstrations</h2>
+            </div>
+            <p class="paragraph">
+              Both videos use the SPIRE checkpoint trained on the <strong>SIRST-UAVB (2400:600)</strong>
+              train/test split. Neither real-scene sequence was included in training. The successful detections
+              provide qualitative evidence of cross-scene generalization beyond the benchmark; these clips are not
+              part of the benchmark evaluation.
+            </p>
           </div>
 
-          <div class="efficiency-row" aria-label="Efficiency metrics reported in the paper">
+          <div class="real-world-video-grid">
+            <figure class="video-card">
+              <div class="video-stage">
+                <video
+                  controls
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  poster="/SPIRE-IRSTD/assets/generalization/real-scene-01-poster.jpg"
+                  width="960"
+                  height="768"
+                  aria-label="SPIRE detection in an unseen real scene with a highly textured background"
+                >
+                  <source src="/SPIRE-IRSTD/assets/generalization/real-scene-01.mp4" type="video/mp4" />
+                  Your browser does not support embedded MP4 video.
+                </video>
+              </div>
+              <figcaption>
+                <div>
+                  <strong>Real Scene I · Structured Background</strong>
+                  <span>Unseen during training</span>
+                </div>
+                <p>A small target is localized amid dense texture and a strong linear background feature.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="video-card">
+              <div class="video-stage">
+                <video
+                  controls
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  poster="/SPIRE-IRSTD/assets/generalization/real-scene-02-poster.jpg"
+                  width="960"
+                  height="768"
+                  aria-label="SPIRE detection in an unseen real scene with mountainous terrain"
+                >
+                  <source src="/SPIRE-IRSTD/assets/generalization/real-scene-02.mp4" type="video/mp4" />
+                  Your browser does not support embedded MP4 video.
+                </video>
+              </div>
+              <figcaption>
+                <div>
+                  <strong>Real Scene II · Mountainous Terrain</strong>
+                  <span>Unseen during training</span>
+                </div>
+                <p>A bright airborne target is localized against a high-contrast terrain background.</p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <p class="video-legend"><span aria-hidden="true"></span> Red marker: SPIRE-predicted target location</p>
+        </section>
+
+        <section id="results" class="content-block results-section" aria-labelledby="results-title" data-qa="results">
+          <h2 id="results-title" class="section-title">Reported Results</h2>
+          <p class="paragraph results-intro">
+            Tables 1 and 2 reproduce all cross-method comparisons reported in the final paper. Table 1 follows the
+            unified centroid protocol at δ = 5 pixels. Table 2 evaluates matching-threshold robustness on SIRST4 and
+            reports throughput under the same input and hardware setting. In Table 1, bold and underlined values mark
+            the best and second-best entries computed from the reported numbers.
+          </p>
+
+          <div class="comparison-block">
+            <div class="comparison-heading">
+              <p class="comparison-index">Table 1 · Main benchmark</p>
+              <h3>Comparison with representative methods</h3>
+              <p>
+                Pre, Rec (Pd), and F1 are reported in %. Fa is reported in units of 10<sup>−8</sup>. FLOPs and
+                Params are measured at 640 × 640 input resolution.
+              </p>
+            </div>
+            <p class="table-scroll-hint" aria-hidden="true">Scroll horizontally to view all metrics.</p>
+            <div
+              class="results-table-wrap"
+              role="region"
+              aria-label="Representative-method comparison table"
+              tabindex="0"
+              data-comparison-scroll="main"
+            >
+              <table class="results-table comparison-table comparison-table--main" data-comparison-table="main">
+                <caption class="sr-only">
+                  Comparison with representative methods on SIRST-UAVB and SIRST4 under the unified centroid
+                  protocol.
+                </caption>
+                <thead>
+                  <tr>
+                    <th class="method-column" scope="col" rowspan="2">Method</th>
+                    <th scope="col" rowspan="2">Venue</th>
+                    <th class="group-start" scope="colgroup" colspan="4">
+                      SIRST-UAVB <span class="dataset-split">(2400:600)</span>
+                    </th>
+                    <th class="group-start" scope="colgroup" colspan="4">
+                      SIRST4 <span class="dataset-split">(2285:1067)</span>
+                    </th>
+                    <th class="group-start" scope="col" rowspan="2">
+                      FLOPs <span class="metric-unit">(G)</span> ↓
+                    </th>
+                    <th scope="col" rowspan="2">Params <span class="metric-unit">(M)</span> ↓</th>
+                  </tr>
+                  <tr>
+                    <th class="group-start" scope="col"><abbr title="Precision">Pre</abbr> ↑</th>
+                    <th scope="col"><abbr title="Recall, equivalent to probability of detection">Rec (Pd)</abbr> ↑</th>
+                    <th scope="col">F1 ↑</th>
+                    <th scope="col"><abbr title="False alarm rate">Fa</abbr> ↓</th>
+                    <th class="group-start" scope="col"><abbr title="Precision">Pre</abbr> ↑</th>
+                    <th scope="col"><abbr title="Recall, equivalent to probability of detection">Rec (Pd)</abbr> ↑</th>
+                    <th scope="col">F1 ↑</th>
+                    <th scope="col"><abbr title="False alarm rate">Fa</abbr> ↓</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="method-column" scope="row">ACM <span class="citation-index">[11]</span></th>
+                    <td>WACV '21</td>
+                    <td class="group-start">87.01</td><td>71.16</td><td>78.29</td><td>34.04</td>
+                    <td class="group-start">90.17</td><td>70.38</td><td>79.05</td><td>44.08</td>
+                    <td class="group-start"><span class="second-best">2.51</span></td><td>0.40</td>
+                  </tr>
+                  <tr>
+                    <th class="method-column" scope="row">ALCNet <span class="citation-index">[12]</span></th>
+                    <td>TGRS '21</td>
+                    <td class="group-start">95.06</td><td>81.11</td><td>87.53</td><td>12.72</td>
+                    <td class="group-start">91.45</td><td>72.41</td><td>80.82</td><td>38.90</td>
+                    <td class="group-start"><strong>2.36</strong></td><td>0.43</td>
+                  </tr>
+                  <tr>
+                    <th class="method-column" scope="row">ISTDU-Net <span class="citation-index">[16]</span></th>
+                    <td>GRSL '22</td>
+                    <td class="group-start">79.28</td><td>78.08</td><td>78.67</td><td>61.54</td>
+                    <td class="group-start">93.28</td><td>72.03</td><td>81.29</td><td>29.83</td>
+                    <td class="group-start">49.65</td><td>2.75</td>
+                  </tr>
+                  <tr>
+                    <th class="method-column" scope="row">RDIAN <span class="citation-index">[24]</span></th>
+                    <td>TGRS '23</td>
+                    <td class="group-start">52.68</td><td>77.91</td><td>62.86</td><td>211.08</td>
+                    <td class="group-start">90.64</td><td>80.83</td><td>85.45</td><td>47.98</td>
+                    <td class="group-start">23.24</td><td><strong>0.22</strong></td>
+                  </tr>
+                  <tr>
+                    <th class="method-column" scope="row">DNANet <span class="citation-index">[17]</span></th>
+                    <td>TIP '23</td>
+                    <td class="group-start">94.48</td><td>89.54</td><td>91.95</td><td>15.77</td>
+                    <td class="group-start"><span class="second-best">93.99</span></td><td>81.20</td><td>87.13</td>
+                    <td><span class="second-best">29.82</span></td><td class="group-start">89.13</td><td>4.70</td>
+                  </tr>
+                  <tr>
+                    <th class="method-column" scope="row">SCTransNet <span class="citation-index">[37]</span></th>
+                    <td>TGRS '24</td>
+                    <td class="group-start"><span class="second-best">98.27</span></td>
+                    <td><span class="second-best">95.95</span></td><td><strong>97.09</strong></td>
+                    <td><span class="second-best">5.09</span></td>
+                    <td class="group-start">81.20</td><td>86.39</td><td>83.72</td><td>114.98</td>
+                    <td class="group-start">63.22</td><td>11.19</td>
+                  </tr>
+                  <tr>
+                    <th class="method-column" scope="row">MSHNet <span class="citation-index">[21]</span></th>
+                    <td>CVPR '24</td>
+                    <td class="group-start">71.90</td><td>88.02</td><td>79.09</td><td>104.27</td>
+                    <td class="group-start">90.68</td><td><span class="second-best">92.86</span></td>
+                    <td>91.47</td><td>60.51</td><td class="group-start">38.16</td><td>4.07</td>
+                  </tr>
+                  <tr>
+                    <th class="method-column" scope="row">SDSNet <span class="citation-index">[38]</span></th>
+                    <td>TGRS '25</td>
+                    <td class="group-start">97.60</td><td><strong>96.29</strong></td><td>96.94</td><td>7.12</td>
+                    <td class="group-start">87.35</td><td>88.27</td><td>87.81</td><td>73.48</td>
+                    <td class="group-start">42.42</td><td>2.49</td>
+                  </tr>
+                  <tr>
+                    <th class="method-column" scope="row">L<sup>2</sup>SKNet <span class="citation-index">[28]</span></th>
+                    <td>TGRS '25</td>
+                    <td class="group-start">95.83</td><td>89.04</td><td>92.31</td><td>11.70</td>
+                    <td class="group-start">92.89</td><td>91.42</td><td><span class="second-best">92.16</span></td>
+                    <td>40.20</td><td class="group-start">43.09</td><td>0.90</td>
+                  </tr>
+                  <tr class="spire-row">
+                    <th class="method-column" scope="row">SPIRE <span class="ours-label">(Ours)</span></th>
+                    <td>—</td>
+                    <td class="group-start"><strong>99.82</strong></td><td>94.44</td>
+                    <td><span class="second-best">97.05</span></td><td><strong>1.02</strong></td>
+                    <td class="group-start"><strong>95.00</strong></td><td><strong>94.21</strong></td>
+                    <td><strong>94.60</strong></td><td><strong>28.53</strong></td>
+                    <td class="group-start">7.68</td><td><span class="second-best">0.29</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="comparison-block comparison-block--compact">
+            <div class="comparison-heading">
+              <p class="comparison-index">Table 2 · Robustness and speed</p>
+              <h3>Multi-threshold comparison on SIRST4</h3>
+              <p>
+                Rec (Pd) and F1 are reported in %. Fa is reported in units of 10<sup>−8</sup>. Results at
+                δ = 5, 8, and 10 are identical; FPS follows the paper's shared input and hardware setting.
+              </p>
+            </div>
+            <p class="table-scroll-hint" aria-hidden="true">Scroll horizontally to view all metrics.</p>
+            <div
+              class="results-table-wrap"
+              role="region"
+              aria-label="Multi-threshold robustness and inference speed comparison table"
+              tabindex="0"
+              data-comparison-scroll="robustness"
+            >
+              <table class="results-table comparison-table comparison-table--robustness" data-comparison-table="robustness">
+                <caption class="sr-only">Multi-threshold robustness and inference speed comparison on SIRST4.</caption>
+                <thead>
+                  <tr>
+                    <th class="method-column" scope="col" rowspan="2">Method</th>
+                    <th class="group-start" scope="colgroup" colspan="3">δ = 3 px</th>
+                    <th class="group-start" scope="colgroup" colspan="3">δ = 5, 8, 10 px</th>
+                    <th class="group-start" scope="col" rowspan="2">FPS ↑</th>
+                  </tr>
+                  <tr>
+                    <th class="group-start" scope="col"><abbr title="Recall, equivalent to probability of detection">Rec (Pd)</abbr> ↑</th>
+                    <th scope="col">F1 ↑</th><th scope="col"><abbr title="False alarm rate">Fa</abbr> ↓</th>
+                    <th class="group-start" scope="col"><abbr title="Recall, equivalent to probability of detection">Rec (Pd)</abbr> ↑</th>
+                    <th scope="col">F1 ↑</th><th scope="col"><abbr title="False alarm rate">Fa</abbr> ↓</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="method-column" scope="row">DNANet <span class="citation-index">[17]</span></th>
+                    <td class="group-start">80.52</td><td>86.41</td><td>33.72</td>
+                    <td class="group-start">81.20</td><td>87.13</td><td>29.82</td><td class="group-start">80.86</td>
+                  </tr>
+                  <tr>
+                    <th class="method-column" scope="row">SCTransNet <span class="citation-index">[37]</span></th>
+                    <td class="group-start">80.15</td><td>81.18</td><td>99.42</td>
+                    <td class="group-start">86.39</td><td>83.72</td><td>114.98</td><td class="group-start">67.09</td>
+                  </tr>
+                  <tr>
+                    <th class="method-column" scope="row">SDSNet <span class="citation-index">[38]</span></th>
+                    <td class="group-start">86.39</td><td>87.21</td><td>67.43</td>
+                    <td class="group-start">88.27</td><td>87.81</td><td>73.48</td><td class="group-start">46.97</td>
+                  </tr>
+                  <tr class="spire-row">
+                    <th class="method-column" scope="row">SPIRE <span class="ours-label">(Ours)</span></th>
+                    <td class="group-start"><strong>92.93</strong></td><td><strong>94.74</strong></td><td><strong>18.61</strong></td>
+                    <td class="group-start"><strong>94.21</strong></td><td><strong>94.60</strong></td><td><strong>28.53</strong></td>
+                    <td class="group-start"><strong>261.2</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="efficiency-row" aria-label="SPIRE headline efficiency metrics reported in the paper">
             <div><strong>0.29M</strong><span>Parameters</span></div>
             <div><strong>7.68G</strong><span>FLOPs · 640²</span></div>
             <div><strong>261.2</strong><span>FPS · paper setting</span></div>
           </div>
           <p class="result-note">
-            Parameters, FLOPs, and throughput follow the paper's reporting setting. This visualization does not
-            re-measure or claim runtime speed.
+            All values are transcribed from the final paper. FLOPs and Params use 640 × 640 input resolution;
+            Table 2 throughput is paper-reported and is not re-measured in the browser.
           </p>
         </section>
 
@@ -457,4 +713,4 @@ import{r as e}from"./rolldown-runtime-hePW80VL.js";import{i as t,r as n}from"./f
     <script type="module" src="/src/main.ts"><\/script>
   </body>
 </html>
-`,o=t(),s=a.replace(/^[\s\S]*?<body[^>]*>/i,``).replace(/<\/body>[\s\S]*$/i,``).replace(/<script\s+type=["']module["']\s+src=["']\/src\/main\.ts["']\s*><\/script>/i,``);function c(){return(0,i.useEffect)(()=>{r(()=>import(`./main-BWgnrpC0.js`),__vite__mapDeps([0,1]))},[]),(0,o.jsx)(`div`,{className:`site-root`,dangerouslySetInnerHTML:{__html:s}})}export{c as default};
+`,o=t(),s=a.replace(/^[\s\S]*?<body[^>]*>/i,``).replace(/<\/body>[\s\S]*$/i,``).replace(/<script\s+type=["']module["']\s+src=["']\/src\/main\.ts["']\s*><\/script>/i,``);function c(){return(0,i.useEffect)(()=>{r(()=>import(`./main-CQn8tuJq.js`),__vite__mapDeps([0,1]))},[]),(0,o.jsx)(`div`,{className:`site-root`,dangerouslySetInnerHTML:{__html:s}})}export{c as default};
