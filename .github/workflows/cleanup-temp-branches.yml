@@ -1,0 +1,22 @@
+name: Clean temporary branches
+
+'on':
+  push:
+    paths:
+      - .github/workflows/cleanup-temp-branches.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Delete temporary branches
+        run: |
+          git push origin --delete tmp-fix-publication-page || true
+          git push origin --delete tmp-fix-publication-page-2 || true
+          git push origin --delete tmp-fix-publication-page-3 || true
